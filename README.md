@@ -16,12 +16,12 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
+[image1]: ./examples/barchart.png "Distribution of classes in dataset"
+[image2]: ./examples/example1.png "Example PreProcessing 1"
+[image3]: ./examples/example2.png "Example PreProcessing 2"
+[image4]: ./examples/GermanSigns.png "German Signs"
+[image5]: ./examples/GermanSignsProcessed.png "German Signs Pre-Processed"
+[image6]: ./examples/Softmax.png "Softmax Probabilities"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
 
@@ -70,7 +70,11 @@ I noticed a lot of examples of people applying random rotations and skews onto t
 
 As a last step I normalized the image data to provide a better input for the training algorithm. This is described in the lectures as helping with the training speed and performance.
 
-ADD EXAMPLE IMAGES HERE
+![alt text][image2]
+
+![alt text][image3]
+
+
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
@@ -119,8 +123,8 @@ The end results were satisfactory for my first attempt at this problem with over
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 I found 7 german signs on the web that I decided to use. I chose these in a few ways because I wanted to see how my network would perform against what I perceived to be hard and easy challenges. 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][image4]
+![alt text][image5] 
 
 I thought to myself the speed limit signs would be difficult to classify due to their similarity to themselves and other signs, the only difference being the numbers themselves. I chose a 50, 20 and 30 speed limit sign for my test set. The 50 kph sign might be difficult because it goes all the way up to the edge of the image. The 20 sign may be difficult because I realized after I downloaded it that the sign itself is missing the outer circle of white, so its not actually the same as the others. The 30 kph sign should be the easiest sign to get.
 
@@ -128,7 +132,7 @@ I then chose 3 arrow signs. I got a keep right sign, turn right ahead sign and r
 
 Finally, I chose a stop sign. I am not sure how this one would work, I figure it should be easy due to the fact its unlike most other signs in the classified set.
 
-#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set.
 
 Here are the results of the prediction:
 
@@ -137,30 +141,19 @@ Here are the results of the prediction:
 | Roundabout mandatory 	| Priority Road									| 0					|
 | Speed Limit 50km/h	| Speed Limit 30km/h							| 0 				|
 | Keep Right			| Keep Right									| 1                 | 
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Stop		      		| Stop							 				| 1					|
+| Speed Limit 20km/h	| Keep Left		    							| 0					|
+| Turn right ahead		| Turn right ahead								| 1					|
+| Speed Limit 30km/h	| Speed Limit 30km/h							| 1					|
 
+Overall my model guessed 4 out of 7 correctly for a total accuracy of 57.1%. I believe the discrepency with the test and validation accuracy is due to the difference in the images I pulled from the web. One of the images neglected to have the white border around the speed limit sign and it incorrectly guessed that image class. The roundabout sign also had occlusion on the sign itself. Finally, the 50km/h sign was correctly guessed to be a speed limit sign but got 3 instead of 5, which are two numbers that are close together in shape. I can see why the mistakes are made which should help me to improve on the performance should I be inclined and had enough time.
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability.
 
-#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+The best way to visualize this is to show it graphically. I plotted each input image on the right with the top 5 softmax probabilities to the right of it with exemplary images to compare, with percentages in the labels.
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+![alt text][image6]
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
-
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
-
-
-For the second image ... 
-
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+The model is, to put it bluntly, hilariously confident in its decisions regardless of how good of a decision it makes. For each image it guessed correctly, it has a softmax probability of 100% for that prediction, but for the 3 it guessed incorrectly, it had 100%, 98% and 93% confidence in its incorrect guess. 
 
 
