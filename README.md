@@ -22,6 +22,7 @@ The goals / steps of this project are the following:
 [image4]: ./examples/GermanSigns.PNG "German Signs"
 [image5]: ./examples/GermanSignsProcessed.PNG "German Signs Pre-Processed"
 [image6]: ./examples/Softmax.PNG "Softmax Probabilities"
+[image7]: ./examples/performance.png "Performance"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -52,8 +53,7 @@ signs data set:
 
 The following bar chart shows how much of each type of image is in the training data set. You can see the distribution of types is not even with some classes of images having over 10x as many as other classes.
 
-![image](https://github.com/nxydes/P2-TrafficSignClassifier/blob/master/examples/barchart.PNG)
-
+![alt text][image1]
 
 ### Design and Test a Model Architecture
 
@@ -97,7 +97,10 @@ My final model consisted of the following layers:
 | Dropout				| Drop 50% during training						|
 | Fully connected		| Outputs 43									|
  
-This is very similar to the example LeNet architecture. I was able to improve the performance of the LeNet example by better pre-processing the images and by adding the Dropout layers. I added the dropout layers based on the earlier discussion in the lecture series that said if your architecture is over fitting the data then the dropout layers can help. 
+This is very similar to the example LeNet architecture. I was able to improve the performance of the LeNet example by better pre-processing the images and by adding the Dropout layers. I added the dropout layers based on the earlier discussion in the lecture series that said if your architecture is over fitting the data then the dropout layers can help. The final model:
+
+![alt text][image7]
+
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
