@@ -16,12 +16,12 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/barchart.png "Distribution of classes in dataset"
-[image2]: ./examples/example1.png "Example PreProcessing 1"
-[image3]: ./examples/example2.png "Example PreProcessing 2"
-[image4]: ./examples/GermanSigns.png "German Signs"
-[image5]: ./examples/GermanSignsProcessed.png "German Signs Pre-Processed"
-[image6]: ./examples/Softmax.png "Softmax Probabilities"
+[image1]: ./examples/barchart.PNG "Distribution of classes in dataset"
+[image2]: ./examples/example1.PNG "Example PreProcessing 1"
+[image3]: ./examples/example2.PNG "Example PreProcessing 2"
+[image4]: ./examples/GermanSigns.PNG "German Signs"
+[image5]: ./examples/GermanSignsProcessed.PNG "German Signs Pre-Processed"
+[image6]: ./examples/Softmax.PNG "Softmax Probabilities"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -52,8 +52,8 @@ signs data set:
 
 The following bar chart shows how much of each type of image is in the training data set. You can see the distribution of types is not even with some classes of images having over 10x as many as other classes.
 
-![alt text][image1]
-[image](https://github.com/nxydes/P2-TrafficSignClassifier/blob/master/examples/barchart.png)
+![image](https://github.com/nxydes/P2-TrafficSignClassifier/blob/master/examples/barchart.PNG)
+
 
 ### Design and Test a Model Architecture
 
