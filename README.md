@@ -16,15 +16,12 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: https://github.com/nxydes/P2-TrafficSignClassifier/examples/barchart.png "Distribution of classes in dataset"
-
+[image1]: ./examples/barchart.png "Distribution of classes in dataset"
 [image2]: ./examples/example1.png "Example PreProcessing 1"
 [image3]: ./examples/example2.png "Example PreProcessing 2"
 [image4]: ./examples/GermanSigns.png "German Signs"
 [image5]: ./examples/GermanSignsProcessed.png "German Signs Pre-Processed"
 [image6]: ./examples/Softmax.png "Softmax Probabilities"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
