@@ -53,6 +53,7 @@ signs data set:
 The following bar chart shows how much of each type of image is in the training data set. You can see the distribution of types is not even with some classes of images having over 10x as many as other classes.
 
 ![alt text][image1]
+[image](https://github.com/nxydes/P2-TrafficSignClassifier/blob/master/examples/barchart.png)
 
 ### Design and Test a Model Architecture
 
